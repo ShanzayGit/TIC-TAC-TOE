@@ -1,17 +1,20 @@
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 #include<iostream>
+#include<vector>
+#include<string>
 using namespace std;
+using Board = vector<vector<string>>;
 void ticTacToe();
-void printBoard( string** b, int n);
-void formatBoard(string** b, int n);
-bool isWinner(string** b, int n);
-bool checkimgVerticalX(string** b, int n);
-bool checkimgHorizontalX(string** b, int n);
-bool checkimgVerticalO(string** b, int n);
-bool checkimgHorizontalO(string** b, int n);
-bool checkingDiagonalO(string** b, int n);
-bool checkingDiagonalX(string** b, int n);
-bool checkingCounterDiagonalO(string** b, int n);
-bool checkingCounterDiagonalX(string** b, int n);
+void printBoard( const Board& b, int n);
+void formatBoard(Board& b, int n);
+bool isWinner(const Board& b, int n);
+bool checkimgVerticalX(const Board& b, int n);
+bool checkimgHorizontalX(const Board& b, int n);
+bool checkimgVerticalO(const Board& b, int n);
+bool checkimgHorizontalO(const Board& b, int n);
+bool checkingDiagonalO(const Board& b, int n);
+bool checkingDiagonalX(const Board& b, int n);
+bool checkingCounterDiagonalO(const Board& b, int n);
+bool checkingCounterDiagonalX(const Board& b, int n);
 #endif

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<vector>
 #include"TIC-TAC-TOE.h"
 using namespace std;
 void ticTacToe()
@@ -7,9 +8,7 @@ void ticTacToe()
 	int n;
 	cout << "Enter size of TIC-TAC-TOE board you like (3/4/6/5/7/8/9/10): ";
 	cin >> n;
-	string ** b = new string*[n];
-	for (int i = 0; i < n; i++)
-		b[i] = new string[n];
+	Board b(n, vector<string>(n));
 	formatBoard(b, n);
 	int index, i, j;
 	printBoard(b,n);
@@ -64,22 +63,27 @@ void ticTacToe()
 		}
 	}
 }
-void printBoard( string ** b,int n)
+void printBoard(const Board& b,int n)
 {
 	for (int l = 0; l < (n); l = l + 1)
 	{
 		for (int m = 0; m < n; m = m + 1)
 		{
 			cout << b[l][m];
-			int num = stoi(b[l][m]);
-			if (num / 10 == 0)
+			if (b[l][m] != "X" && b[l][m] != "O")
+			{
+				int num = stoi(b[l][m]);
+				if (num / 10 == 0)
+					cout << " ";
+			}
+			else
 				cout << " ";
 			cout << "  ";
 		}
 		cout << "\n";
 	}
 }
-bool isWinner(string** b, int n)
+bool isWinner(const Board& b, int n)
 {
 	if (checkimgHorizontalX(b,n))
 	{
@@ -112,7 +116,7 @@ bool isWinner(string** b, int n)
 		return 0;
 	}
 }
-bool checkimgHorizontalX(string** b, int n)
+bool checkimgHorizontalX(const Board& b, int n)
 {
 	for (int i = 0; i < n; i = i + 1)
 	{
@@ -131,7 +135,7 @@ bool checkimgHorizontalX(string** b, int n)
 	}
 	return 0;
 }
-bool checkimgVerticalX(string** b, int n)
+bool checkimgVerticalX(const Board& b, int n)
 {
 	for (int i = 0; i < n; i = i + 1)
 	{
@@ -150,7 +154,7 @@ bool checkimgVerticalX(string** b, int n)
 	}
 	return 0;
 }
-bool checkimgHorizontalO(string** b, int n)
+bool checkimgHorizontalO(const Board& b, int n)
 {
 	for (int i = 0; i < n; i = i + 1)
 	{
@@ -169,7 +173,7 @@ bool checkimgHorizontalO(string** b, int n)
 	}
 	return 0;
 }
-bool checkimgVerticalO(string** b, int n)
+bool checkimgVerticalO(const Board& b, int n)
 {
 	for (int i = 0; i < n; i = i + 1)
 	{
@@ -188,7 +192,7 @@ bool checkimgVerticalO(string** b, int n)
 	}
 	return 0;
 }
-bool checkingDiagonalX(string** b, int n)
+bool checkingDiagonalX(const Board& b, int n)
 {
 	int count = 0;
 	for (int i = 0; i < n; i = i + 1)
@@ -210,7 +214,7 @@ bool checkingDiagonalX(string** b, int n)
 		return 0;
 	}
 }
-bool checkingDiagonalO(string** b, int n)
+bool checkingDiagonalO(const Board& b, int n)
 {
 	int count = 0;
 	for (int i = 0; i < n; i = i + 1)
@@ -232,7 +236,7 @@ bool checkingDiagonalO(string** b, int n)
 		return 0;
 	}
 }
-bool checkingCounterDiagonalX(string** b, int n)
+bool checkingCounterDiagonalX(const Board& b, int n)
 {
 	int count = 0;
 	int j = 0;
@@ -251,7 +255,7 @@ bool checkingCounterDiagonalX(string** b, int n)
 	else
 		return 0;
 }
-bool checkingCounterDiagonalO(string** b, int n)
+bool checkingCounterDiagonalO(const Board& b, int n)
 {
 	int count = 0;
 	int j = 0;
@@ -272,7 +276,7 @@ bool checkingCounterDiagonalO(string** b, int n)
 		return 0;
 	}
 }
-void formatBoard(string** b, int n)
+void formatBoard( Board& b, int n)
 {
 	int num = 1;
 	for (int i = 0; i < n; i++)
