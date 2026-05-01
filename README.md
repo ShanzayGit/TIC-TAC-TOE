@@ -25,10 +25,10 @@ TIC-TAC-TOE/
 
 ### 🔹 On Linux/Mac (g++)
 Compile all `.cpp` files together with `main.cpp`:
-
+```
 g++ TIC-TAC-TOE/*.cpp main.cpp -o tictactoe_app
 ./tictactoe_app
-
+```
 
 ## 🧩 Example Usage 
   
