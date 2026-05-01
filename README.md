@@ -32,23 +32,40 @@ g++ TIC-TAC-TOE/*.cpp main.cpp -o tictactoe_app
 
 ## 🧩 Example Usage 
   
-
-  TicTacToe game();
+  int n ;
+  cout<<"Enter size of board (nxn):";
+  cin>>n;
+  TicTacToe game(n);
   game.play();
 
+## 🔄 Workflow: Numbered Grid
 
-**Expected Console Flow:**
-Enter board size (n): 3
-# 1  2  3
-# 4  5  6
-# 7  8  9
-Enter index player X : 5
-1  2  3 
+When the game starts, the board is initialized with sequential numbers (`1 … n*n`).  
+Players choose an index, and that number is replaced with their symbol (`X` or `O`).  
+This makes the board easy to follow and ensures valid moves.
+
+### Example (3×3 board)
+
+**Initial Board:**
+1  2  3
+4  5  6
+7  8  9
+
+
+# Player X turn
+**Enter Index: 5**
+1  2  3
 4  X  6
 7  8  9
-Enter Index Player O : 1
-...
-Player X wins!
+
+# Player O turn
+**Enter Index: 1**
+O  2  3
+4  X  6
+7  8  9
+
+
+The game continues until one player achieves `n` in a row (horizontal, vertical, diagonal, or counter‑diagonal), or the board fills up (draw).
 
 ## 🚀 Features Implemented
 - Customizable board size (n×n)
