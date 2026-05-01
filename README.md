@@ -10,7 +10,7 @@ A player wins if they achieve **n consecutive marks (X or O)** horizontally, ver
 
 TIC-TAC-TOE/
 - TIC-TAC-TOE/        # Contains Tic-Tac-Toe.cpp, Tic-Tac-Toe.h, and other source files
-- main.cpp            # Driver file (entry point to be added)
+- main.cpp            # Driver file 
 - TIC-TAC-TOE.sln     # Visual Studio solution file
 - .gitignore
 - .gitattributes
