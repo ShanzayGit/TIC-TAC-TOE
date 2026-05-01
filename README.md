@@ -47,22 +47,22 @@ This makes the board easy to follow and ensures valid moves.
 ### Example (3×3 board)
 
 **Initial Board:**
-1  2  3
-4  5  6
-7  8  9
+**1  2  3**
+**4  5  6**
+**7  8  9**
 
 
-# Player X turn
+Player X turn
 **Enter Index: 5**
-1  2  3
-4  X  6
-7  8  9
+**1  2  3**
+**4  X  6**
+**7  8  9**
 
-# Player O turn
+Player O turn
 **Enter Index: 1**
-O  2  3
-4  X  6
-7  8  9
+**O  2  3**
+**4  X  6**
+**7  8  9**
 
 
 The game continues until one player achieves `n` in a row (horizontal, vertical, diagonal, or counter‑diagonal), or the board fills up (draw).
