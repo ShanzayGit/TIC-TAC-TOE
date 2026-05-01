@@ -1,16 +1,13 @@
-#include "TicTacToe.h"
-#include <iostream>
+#include<iostream>
+#include<string>
+#include<vector>
+#include"TIC-TAC-TOE.h"
 using namespace std;
-
 int main()
 {
-    int n;
-    cout << "Enter board size (n): ";
-    cin >> n;
-
-    TicTacToe game(n);
-    game.play();
-
-    return 0;
+	int n;
+	cout << "Enter size of board (nxn) :";
+	cin >> n;
+	TicTacToe game(n);
+	game.play();
 }
-
