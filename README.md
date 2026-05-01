@@ -39,9 +39,9 @@ g++ TIC-TAC-TOE/*.cpp main.cpp -o tictactoe_app
 
 **Expected Console Flow:**
 Enter board size (n): 3
-1  2  3
-4  5  6
-7  8  9
+# 1  2  3
+# 4  5  6
+# 7  8  9
 Enter index player X : 5
 1  2  3 
 4  X  6
